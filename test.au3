@@ -11,5 +11,8 @@
 ; Script Start - Add your code below here
  #include <MsgBoxConstants.au3>
 
-MsgBox($MB_OK, "Marek", "Hello World!") 
+$var_1= 0 
+$var_2= "Hello"
+$var_3= "Kukuryku" 
 
+MsgBox($var_1,$var_2 , $var_3)
