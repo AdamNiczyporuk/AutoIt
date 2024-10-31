@@ -24,5 +24,15 @@ $var_3= "Kukuryku"
 
 ;~ ShellExecute($instalerPath)
 
-Local $command = "Get-Process"
-RunAs("Administrator", "", "YourPassword", 0, "powershell.exe", "-command """ & $command & """")
+Local $result = Run(@ComSpec & " /c Get-NetAdapter", "", @SW_HIDE, 2)
+ConsoleWrite($result & @CRLF)
+Local $output = ""
+
+; Odczyt wyników
+While True
+    $output &= StdoutRead($result)
+    If @error Then ExitLoop
+WEnd
+
+; Wyświetlenie wyników w konsoli
+ConsoleWrite($output & @CRLF)
