@@ -24,8 +24,7 @@ $var_3= "Kukuryku"
 
 ;~ ShellExecute($instalerPath)
 
-Local $result = Run(@ComSpec & " /c Get-NetAdapter", "", @SW_HIDE, 2)
-ConsoleWrite($result & @CRLF)
+Local $result = Run(@ComSpec & " /c powershell Get-NetAdapter", "", @SW_HIDE, 2)
 Local $output = ""
 
 ; Odczyt wyników
