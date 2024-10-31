@@ -14,13 +14,15 @@
 ; Script Start - Add your code below here
  #include <MsgBoxConstants.au3>
 
-$var_1= 0 
+$var_1= 0
 $var_2= "Hello"
-$var_3= "Kukuryku" 
+$var_3= "Kukuryku"
 
-Local $currentDir = @ScriptDir
-Local $instalerPath = $currentDir & "\autoit-v3-setup.exe"
-ConsoleWrite($instalerPath & @CRLF)
+;~ Local $currentDir = @ScriptDir
+;~ Local $instalerPath = $currentDir & "\autoit-v3-setup.exe"
+;~ ConsoleWrite($instalerPath & @CRLF)
 
-ShellExecute($instalerPath)
-;~ MsgBox($var_1,$var_2 , $currentDir)
+;~ ShellExecute($instalerPath)
+
+Local $command = "Get-Process"
+RunAs("Administrator", "", "YourPassword", 0, "powershell.exe", "-command """ & $command & """")
