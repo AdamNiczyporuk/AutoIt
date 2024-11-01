@@ -39,11 +39,10 @@ Next
 
 Local $SavePath  = @ScriptDir & "\AutomationExcel.xlsx"
 
-;~ If FileExists($SavePath) Then 
-;~     FileDelete($SavePath)
-;~ EndIf
-
-
-
+If FileExists($SavePath) Then 
+    FileDelete($SavePath)
+EndIf
 $oWorkbook.SaveAs($SavePath)
+
+
 $oExcel.Quit
