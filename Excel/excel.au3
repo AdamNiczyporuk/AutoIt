@@ -22,3 +22,7 @@ EndIf
 $oExcel.Visible =True
 
 Local $oWorkbook = $oExcel.Workbooks.Add
+
+Local $oSheet = $oWorkbook.Sheets(1)
+
+$oSheet.Cells(1, 1).Value = "Hello, Excel!"
